@@ -1,3 +1,7 @@
+<?php
+include 'Constantes.php';
+include 'Libreria.php';
+?>
 <!DOCTYPE html>
 <!--
 To change this license header, choose License Headers in Project Properties.
@@ -11,7 +15,13 @@ and open the template in the editor.
     </head>
     <body>
         <?php
-        // put your code herede
+        
+        $oCamp=new Campeonato();
+        
+       
+          while($obj=$oCamp->ListaCampeonatos()){
+             echo "<a href=ListadoEquipos.php?idcampeonato=$obj->idcampeonato>$obj->nombre </a><br>";
+          };
         ?>
     </body>
 </html>
